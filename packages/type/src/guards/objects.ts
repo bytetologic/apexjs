@@ -65,3 +65,7 @@ export const isAsyncIterable = (value: unknown): value is AsyncIterable<any> => 
 export const isGeneratorFunction = (value: unknown): value is GeneratorFunction => {
     return typeof value === "function" && value.constructor?.name === "GeneratorFunction";
 };
+
+export const isWindow = (value: unknown = typeof window !== "undefined" ? window : undefined): value is Window => {
+    return typeof value === "object" && !isNil(value) && "document" in value;
+};

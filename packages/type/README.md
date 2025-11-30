@@ -197,6 +197,7 @@ The library has zero dependencies and uses only standard JavaScript features, ma
 - `isIterable(value)` - Checks if value is iterable
 - `isAsyncIterable(value)` - Checks if value is async iterable
 - `isGeneratorFunction(value)` - Checks if value is a generator function
+- `isWindow(value)` - Checks if value is a Window object
 
 ### Advanced Types
 
@@ -292,7 +293,7 @@ This structure allows bundlers to eliminate entire categories of checks if you d
 
 ## License
 
-MIT
+[MIT](https://github.com/bytetologic/apexo.js?tab=MIT-1-ov-file)
 
 ## Repository
 

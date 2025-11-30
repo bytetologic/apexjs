@@ -1,6 +1,6 @@
 {
   "name": "@apexo/type",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "@apexo/type is a small, zero-dependency library that gives you easy and reliable type checks in JavaScript and TypeScript.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",

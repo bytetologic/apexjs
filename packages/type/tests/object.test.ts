@@ -3,6 +3,7 @@ import {
     isObject,
     isArray,
     isPlainObject,
+    isWindow,
 } from "../src/index";
 
 describe("Object Checks", () => {
@@ -36,5 +37,30 @@ describe("Object Checks", () => {
         expect(isPlainObject([])).toBe(false);
         expect(isPlainObject(null)).toBe(false);
         expect(isPlainObject(Object.create(null))).toBe(true);
+    });
+
+    test("isWindow", () => {
+        // Test with a mock window object
+        const mockWindow = { document: {} };
+        expect(isWindow(mockWindow)).toBe(true);
+
+        // Test with objects that have document property
+        expect(isWindow({ document: {}, location: {} })).toBe(true);
+
+        // Test with null and undefined
+        expect(isWindow(null)).toBe(false);
+        expect(isWindow(undefined)).toBe(false);
+
+        // Test with plain objects without document
+        expect(isWindow({})).toBe(false);
+        expect(isWindow({ location: {} })).toBe(false);
+
+        // Test with primitives
+        expect(isWindow("window")).toBe(false);
+        expect(isWindow(123)).toBe(false);
+        expect(isWindow(true)).toBe(false);
+
+        // Test with arrays
+        expect(isWindow([])).toBe(false);
     });
 });
